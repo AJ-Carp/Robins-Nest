@@ -16,7 +16,7 @@ public class Classroom {
 
     @OneToOne
     @JoinColumn(name = "teacher_id")
-    private Teacher teacher;
+    private TeacherProfile teacher;
 
     @OneToMany(mappedBy = "classroom")
     private List<Student> students = new ArrayList<>();

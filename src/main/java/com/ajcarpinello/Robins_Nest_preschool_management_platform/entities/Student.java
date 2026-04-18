@@ -24,12 +24,11 @@ public class Student {
     @JoinColumn(name = "classroom_id")
     private Classroom classroom;
 
-    @Column(nullable = false)
     @ManyToMany
     @JoinTable(
             name = "students_guardians",
             joinColumns = @JoinColumn(name = "student_id"),
             inverseJoinColumns = @JoinColumn(name = "guardian_id")
     )
-    private List<Guardian> guardians = new ArrayList<>();
+    private List<GuardianProfile> guardians = new ArrayList<>();
 }
