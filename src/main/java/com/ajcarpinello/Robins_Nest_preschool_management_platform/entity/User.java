@@ -1,4 +1,4 @@
-package com.ajcarpinello.Robins_Nest_preschool_management_platform.entities;
+package com.ajcarpinello.Robins_Nest_preschool_management_platform.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
