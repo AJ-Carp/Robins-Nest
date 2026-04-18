@@ -1,0 +1,35 @@
+package com.ajcarpinello.Robins_Nest_preschool_management_platform.entities;
+
+import jakarta.persistence.*;
+import lombok.Data;
+import java.util.ArrayList;
+import java.util.List;
+
+@Data
+@Entity
+@Table(name = "students")
+public class Student {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column(nullable = false)
+    private String name;
+
+    @Column(nullable = false)
+    private int age;
+
+    @ManyToOne
+    @JoinColumn(name = "classroom_id")
+    private Classroom classroom;
+
+    @Column(nullable = false)
+    @ManyToMany
+    @JoinTable(
+            name = "students_guardians",
+            joinColumns = @JoinColumn(name = "student_id"),
+            inverseJoinColumns = @JoinColumn(name = "guardian_id")
+    )
+    private List<Guardian> guardians = new ArrayList<>();
+}
