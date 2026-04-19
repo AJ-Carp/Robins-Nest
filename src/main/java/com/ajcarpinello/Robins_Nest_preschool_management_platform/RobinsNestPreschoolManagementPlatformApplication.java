@@ -8,6 +8,8 @@ public class RobinsNestPreschoolManagementPlatformApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(RobinsNestPreschoolManagementPlatformApplication.class, args);
+
+
 	}
 
 }
